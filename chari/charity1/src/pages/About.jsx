@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 import mainImage from "../assets/signup_bg.png";
+import staff1 from "../assets/testimonals/staff1.jpeg";
+import staff2 from "../assets/testimonals/staff2.jpeg";
 import "../css/about.css";
 
 export default function About() {
@@ -15,13 +17,13 @@ export default function About() {
       id: 1,
       name: "Merdekiyos Estifanos",
       role: "Founder & Director",
-      image: "../assets/team1.jpg", // Replace with actual image
+      image: staff1, // Replace with actual image
     },
     {
       id: 2,
       name: "Abebe Kebede",
       role: "Program Coordinator",
-      image: "../assets/team2.jpg", // Replace with actual image
+      image: staff2, // Replace with actual image
     },
   ];
 

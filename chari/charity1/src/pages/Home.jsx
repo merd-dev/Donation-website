@@ -6,6 +6,8 @@ import BackToTop from "../components/BackToTop";
 import Initiatives from "../components/Initiatives";
 import Funds from "../components/Funds";
 import mainImage from "../assets/carousel-1.jpg";
+import testimonial1 from "../assets/testimonals/testimonals1.jpg";
+import testimonial2 from "../assets/testimonals/testimonals2.webp";
 import "../css/home.css";
 
 export default function HomePage() {
@@ -15,15 +17,15 @@ export default function HomePage() {
   const testimonials = [
     {
       id: 1,
-      name: "Abebe Kebede",
+      name: "Meron Kebede",
       text: "Nile NGO transformed my community by providing educational resources for children.",
-      image: "../assets/testimonial1.jpg",
+      image: testimonial1,
     },
     {
       id: 2,
       name: "Fatima Ali",
       text: "Their health initiatives saved lives in my village. I'm proud to support Nile!",
-      image: "../assets/testimonial2.jpg",
+      image: testimonial2,
     },
   ];
 
@@ -33,17 +35,13 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div
-          className="hero-bg"
-          style={{ backgroundImage: `url(${mainImage})` }}
-        >
+        <div className="hero-bg" style={{ backgroundImage: `url(${mainImage})` }}>
           <div className="hero-overlay">
             <div className="hero-content container">
               <h1 className="hero-title">Welcome to Nile NGO</h1>
               <p className="hero-subtitle">
-                Transforming lives through education, health, and food
-                initiatives. Join us in building a brighter future for
-                underprivileged communities.
+                Transforming lives through education, health, and food initiatives. 
+                Join us in building a brighter future for underprivileged communities.
               </p>
               <div className="hero-buttons">
                 <button
@@ -102,9 +100,7 @@ export default function HomePage() {
                     alt={testimonial.name}
                     className="testimonial-img"
                   />
-                  <blockquote className="testimonial-text">
-                    "{testimonial.text}"
-                  </blockquote>
+                  <blockquote className="testimonial-text">"{testimonial.text}"</blockquote>
                   <h4 className="testimonial-author">{testimonial.name}</h4>
                 </div>
               </div>
@@ -119,8 +115,8 @@ export default function HomePage() {
           <div className="cta-content">
             <h2 className="cta-title">Be the Change Today</h2>
             <p className="cta-text">
-              Your donation, big or small, can change lives. Support Nile NGO's
-              mission to uplift communities.
+              Your donation, big or small, can change lives. Support Nile
+              NGO's mission to uplift communities.
             </p>
             <button
               className="btn btn-donate"

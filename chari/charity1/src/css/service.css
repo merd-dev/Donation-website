@@ -1,121 +1,179 @@
-.service-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: #333;
+/* Service Page Styles */
+.service-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.page-header {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.container-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #28a745;
+}
+
+.service-category {
+  font-size: 1.8rem;
+  color: #28a745;
+  margin: 0;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.subsection {
+  margin: 15px 0;
+}
+
+.subsection-title {
+  font-size: 1.4rem;
+  color: #e74c3c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.subsection-title:hover {
+  color: #c0392b;
+}
+
+.subsection-title .fa-chevron-right {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.subsection-title .fa-chevron-right.open {
+  transform: rotate(90deg);
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.service-list li {
+  font-size: 1rem;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-list li .fa-check-circle {
+  color: #27ae60;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.highlight {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.cta-section {
+  padding: 60px 0;
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.donate-btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background-color: #fff;
+  color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
   }
-  
-  .service-container {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-    position: relative;
-    overflow: hidden;
+
+  .page-header p {
+    font-size: 1rem;
   }
-  
-  .service-container::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: rgba(100, 200, 255, 0.1);
-    border-radius: 50%;
-    z-index: 0;
-  }
-  .service-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    text-align: center;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-  }
-  
+
   .service-category {
-    font-size: 1.8rem;
-    color: #3498db;
-    margin-top: 1.5rem;
+    font-size: 1.6rem;
   }
-  
-  .service-description {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Cards & Subsections */
-  .service-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .service-subsection {
-    margin: 1.5rem 0;
-  }
-  
+
   .subsection-title {
-    font-size: 1.4rem;
-    color: #e74c3c;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 1.2rem;
   }
-  
-  /* Lists & Highlights */
-  .service-list {
-    list-style-type: none;
-    padding-left: 1rem;
-  }
-  
+
   .service-list li {
-    margin: 0.8rem 0;
-    padding-left: 1.5rem;
-    position: relative;
+    font-size: 0.9rem;
   }
-  
-  .service-list li::before {
-    content: "✓";
-    color: #27ae60;
-    position: absolute;
-    left: 0;
+
+  .cta-title {
+    font-size: 1.8rem;
   }
-  
-  .highlight {
-    color: #3498db;
-  }
-  
-  /* CTA Section */
-  .cta-section {
-    text-align: center;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 10px;
-  }
-  
-  .cta-text {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-  
-  .donate-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .donate-btn:hover {
-    background: #c0392b;
-  }
-  
+}

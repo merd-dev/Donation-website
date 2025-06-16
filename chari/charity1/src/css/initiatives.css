@@ -1,0 +1,259 @@
+.Initiatives {
+  background: white;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 4em;
+  padding-bottom: 0.6em;
+  margin-top: -30px;
+  color: #FDBE33;;
+  white-space: nowrap;
+  transform: translateX(30px);
+  -webkit-transform: translateX(30px);
+}
+
+.initiative-cards {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 32vw;
+}
+/* Previous styles remain exactly the same */
+
+/* Ensure default carousel navigation is hidden */
+.react-spring-carousel-navigation-button {
+  display: none !important;
+}
+.react-spring-carousel-item {
+  filter: blur(2px);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.react-spring-carousel-item.active {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Ensure both sides have the same styling */
+.react-spring-carousel-item.prev,
+.react-spring-carousel-item.next {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+/* Rest of your original CSS remains unchanged */
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* Ensures image always has visible height */
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: flex-end; /* ensures text is at the bottom */
+  box-shadow: 0 15px 25px rgba(19, 19, 18, 0.4)
+}
+
+.slide-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 15px 25px rgba(253, 167, 6, 0.4)
+}
+.slide-container:hover img {
+  transform: scale(1.05) translateY(-5px);
+  
+}
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.slide-text h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.slide-text p {
+  font-size: 1.2em;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.slide-container:hover .slide-text h3 {
+  color: #FDBE33;
+}
+
+.slide-container:hover .slide-text p {
+  color: #CECECE;
+}
+.slide-container:hover {
+  transform: scale(1.05) translateY(-5px);
+  cursor: pointer;
+}
+
+/* Your original arrow styles */
+.arrows {
+  width: 100%;
+  padding-bottom: 3em;
+  display: flex;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.arrows svg {
+  color: #FDBE33;
+  margin-left: 2em;
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+.arrows svg:hover {
+  color: #CECECE;
+  scale: 1.1;
+}
+
+/* Responsive Styles */
+@media only screen and  (max-width: 1023px) {
+  .initiative-cards {
+    width: 80%;
+    height: 43vw;
+  }
+  .title h3{
+    font-size:3.5em;
+    margin-top:10px;
+  }
+  .slide-text h3 {
+    font-size: 1.5em;
+  }
+  .slide-text p {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .initiative-cards {
+    width: 100%;
+    height: 63vw;
+  }
+  
+  .slide-text h3 {
+    font-size: 1.0em;
+  }
+  .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+  .title h3{
+    font-size:2.7em;
+    margin-top: 20px;
+    margin-bottom: 1px;
+    margin-right: 50px;
+  }
+  .slide-text p {
+    font-size: 0.8em;
+  }
+  .slide-container:hover .slide-text h3 {
+    color: #FDBE33;
+  }
+  
+  .slide-container:hover .slide-text p {
+    color: #CECECE;
+  }
+  .slide-container:hover {
+    transform: scale(1.05) translateY(-5px);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 550px) {
+  .slide-text {
+    padding: 10px;
+  }
+  
+  .slide-text h3 {
+    font-size: 0.7em;
+  }
+  .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+  .title h3{
+    font-size:2.3em;
+    margin-top: 30pxpx;
+    margin-right: 50px;
+  }
+  .slide-text p {
+    font-size: 0.5em;
+  }
+  .slide-container:hover .slide-text h3 {
+    color: #FDBE33;
+  }
+  
+  .slide-container:hover .slide-text p {
+    color: #CECECE;
+  }
+  .slide-container:hover {
+    transform: scale(1.05) translateY(-5px);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .slide-text h3 {
+    font-size: 0.5em;
+  }
+  .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+  .title h3{
+    font-size:1.9em;
+    margin-right: 50px;
+  }
+
+  .slide-text p {
+    font-size: 0.4em;
+  }
+  .slide-container:hover .slide-text h3 {
+    color: #FDBE33;
+  }
+  
+  .slide-container:hover .slide-text p {
+    color: #CECECE;
+  }
+  .slide-container:hover {
+    transform: scale(1.05) translateY(-5px);
+    cursor: pointer;
+  }
+}

@@ -1,45 +1,45 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
-import mainImage from "../assets/signup_bg.png";
-import staff1 from "../assets/testimonals/staff1.jpeg";
-import staff2 from "../assets/testimonals/staff2.jpeg";
-import "../css/about.css";
-
+import PageHeader from "../components/PageHeader";
+import Stats from "../components/Stats";
+import MissionVision from "../components/MissionVision";
+import Team from "../components/Team";
+import Journey from "../components/Journey";
+import image from "../assets/Initiatives/nile-hero.jpg";
 export default function About() {
-  const navigate = useNavigate();
-
-  // Sample team members (replace with real data)
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Merdekiyos Estifanos",
-      role: "Founder & Director",
-      image: staff1, // Replace with actual image
-    },
-    {
-      id: 2,
-      name: "Abebe Kebede",
-      role: "Program Coordinator",
-      image: staff2, // Replace with actual image
-    },
-  ];
-
   return (
-    <div className="about-page">
+    <>
       <Navbar />
+      <PageHeader title="About Us" path="/about" name="About Us" />
 
-      {/* Header Section */}
-      <section className="page-header">
+      {/* About Introduction Section */}
+      <section className="about-intro py-5">
         <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h4>About Nile NGO</h4>
-              <p className="mx-auto" style={{ maxWidth: "800px" }}>
-                Dedicated to transforming lives through education, health, and
-                food initiatives for underprivileged communities in Ethiopia.
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <img
+                src={image}
+                alt="Nile Charity Team"
+                className="img-fluid rounded shadow"
+              />
+            </div>
+            <div className="col-lg-6">
+              <h2 className="mb-4">Our Story</h2>
+              <p className="lead">
+                Founded in 2015, Nile Charity is dedicated to transforming lives
+                along the Nile charity.
+              </p>
+              <p>
+                What began as a small initiative to provide clean water to
+                riverside communities has grown into a comprehensive
+                humanitarian organization serving thousands across multiple
+                countries.
+              </p>
+              <p>
+                Our work focuses on sustainable development that empowers
+                communities while collecting the donation.
               </p>
             </div>
           </div>
@@ -47,77 +47,77 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="mission-vision-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <h3>Our Mission</h3>
-              <p>
-                To empower underprivileged children and communities by providing
-                access to quality education, healthcare, and nutrition,
-                fostering sustainable development.
-              </p>
-            </div>
-            <div className="col-md-6">
-              <h3>Our Vision</h3>
-              <p>
-                A world where every child has the opportunity to thrive, and
-                communities are self-sufficient and resilient.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MissionVision />
 
-      {/* Our Story Section */}
-      <section className="story-section">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <h3>Our Story</h3>
-              <p>
-                Founded in 2020 in Harar, Ethiopia, Nile NGO began with a simple
-                goal: to support vulnerable children with education and
-                healthcare. Over the years, we’ve expanded to address food
-                insecurity and community development, impacting thousands of
-                lives with the help of dedicated volunteers and donors.
-              </p>
-              <button
-                className="btn btn-outline-info"
-                onClick={() => navigate("/donate")}
-              >
-                Support Our Work
-              </button>
-            </div>
-            <div className="col-md-6">
-              <img
-                src={mainImage}
-                alt="Nile NGO Story"
-                className="story-image"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Impact Stats Section */}
+      <Stats />
+
+      {/* Our Journey Timeline */}
+      <Journey />
 
       {/* Team Section */}
-      <section className="team-section">
+      <section className="py-5 bg-light">
         <div className="container">
-          <div className="section-header text-center">
-            <h3>Meet Our Team</h3>
-            <h2>Driving Change Together</h2>
+          <div className="text-center mb-5">
+            <h2>Our Leadership</h2>
+            <p className="lead">
+              The passionate individuals driving our mission forward
+            </p>
           </div>
-          <div className="row">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="col-md-6">
-                <div className="team-card">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="team-img"
-                  />
-                  <h4>{member.name}</h4>
-                  <p>{member.role}</p>
+          <Team />
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="text-center mb-5">Our Core Values</h2>
+          <div className="row g-4">
+            {[
+              {
+                icon: "🌱",
+                title: "Sustainability",
+                description:
+                  "We implement solutions that create lasting change without harming the environment.",
+              },
+              {
+                icon: "🤝",
+                title: "Community Partnership",
+                description:
+                  "We work with local communities to develop solutions that meet their specific needs.",
+              },
+              {
+                icon: "🔍",
+                title: "Transparency",
+                description:
+                  "We maintain open books and regular reporting so donors see exactly how funds are used.",
+              },
+              {
+                icon: "❤️",
+                title: "Compassion",
+                description:
+                  "We serve all people with dignity, regardless of religion, ethnicity, or background.",
+              },
+              {
+                icon: "🌍",
+                title: "Environmental Stewardship",
+                description:
+                  "We protect the Nile ecosystem while helping communities thrive.",
+              },
+              {
+                icon: "✨",
+                title: "Innovation",
+                description:
+                  "We constantly seek better ways to solve complex challenges.",
+              },
+            ].map((value, index) => (
+              <div key={index} className="col-md-6 col-lg-4">
+                <div className="card h-100 border-0 shadow-sm">
+                  <div className="card-body text-center p-4">
+                    <div className="display-4 mb-3">{value.icon}</div>
+                    <h4>{value.title}</h4>
+                    <p>{value.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -125,29 +125,29 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
+      {/* Partners Section */}
+      <section className="py-5 bg-light">
         <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h2>Join Our Mission</h2>
-              <p>
-                Your support can change lives. Donate today or get involved with
-                Nile NGO to make a difference.
-              </p>
-              <button
-                className="btn btn-success"
-                onClick={() => navigate("/donate")}
-              >
-                Donate Now
-              </button>
-            </div>
+          <h2 className="text-center mb-5">Our Partners</h2>
+          <div className="row justify-content-center align-items-center g-4">
+            {[
+              "../src/assets/logo-2.jpg",
+              "../src/assets/10001.svg",
+              "../src/assets/10002.svg",
+              "../src/assets/logo7.png",
+            ].map((logo, index) => (
+              <div key={index} className="col-6 col-md-3">
+                <div className="partner-logo p-4">
+                  <img src={logo} alt="Partner Logo" className="img-fluid" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <Footer />
       <BackToTop />
-    </div>
+    </>
   );
 }

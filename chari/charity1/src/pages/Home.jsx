@@ -1,159 +1,83 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useTranslation } from "react-i18next";
 import Navbar from "../components/Navbar";
+import HeroCarousel from "../components/HeroCarousel";
+import Hero from "../components/Hero";
+import MissionVision from "../components/MissionVision";
+import Stats from "../components/Stats";
+import Initiatives from "../components/Initiatives";
+import Testimonials from "../components/Testimonal";
+import Gallery from "../components/Gallery";
+import Newsletter from "../components/Newsletter";
+import ImpactStories from "../components/ImpactStories"; // New component
+import PartnerLogos from "../components/PartnerLogos"; // New component
+import VolunteerCTA from "../components/VolunteerCTA"; // New component
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
-import Initiatives from "../components/Initiatives";
-import Funds from "../components/Funds";
-import mainImage from "../assets/carousel-1.jpg";
-import testimonial1 from "../assets/testimonals/testimonals1.jpg";
-import testimonial2 from "../assets/testimonals/testimonals2.webp";
-import "../css/home.css";
 
-export default function HomePage() {
-  const navigate = useNavigate();
-
-  // Sample testimonials
-  const testimonials = [
-    {
-      id: 1,
-      name: "Meron Kebede",
-      text: "Nile NGO transformed my community by providing educational resources for children.",
-      image: testimonial1,
-    },
-    {
-      id: 2,
-      name: "Fatima Ali",
-      text: "Their health initiatives saved lives in my village. I'm proud to support Nile!",
-      image: testimonial2,
-    },
-  ];
-
+export default function Home() {
+  // const { t } = useTranslation();
   return (
-    <div className="homepage">
+    <>
       <Navbar />
+      <HeroCarousel />
+      {/* Hero Banner */}
 
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-bg" style={{ backgroundImage: `url(${mainImage})` }}>
-          <div className="hero-overlay">
-            <div className="hero-content container">
-              <h1 className="hero-title">Welcome to Nile NGO</h1>
-              <p className="hero-subtitle">
-                Transforming lives through education, health, and food initiatives. 
-                Join us in building a brighter future for underprivileged communities.
-              </p>
-              <div className="hero-buttons">
-                <button
-                  className="btn btn-donate"
-                  onClick={() => navigate("/donate")}
-                >
-                  Donate Now
-                </button>
-                <button
-                  className="btn btn-learn"
-                  onClick={() => navigate("/about")}
-                >
-                  Learn More
-                </button>
-              </div>
+      {/* Quick Donation CTA */}
+      <section
+        className="py-3 text-white"
+        style={{ backgroundColor: "#2c3e50" }}
+      >
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-8">
+              <h4 className="mb-0">
+                Emergency: Help feed 500 families this month
+              </h4>
+            </div>
+            <div className="col-md-4 text-md-end mt-2 mt-md-0">
+              <button className="btn btn-light btn-lg">Donate Now</button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Initiatives Section */}
-      <section className="section initiatives-section">
+      {/* Mission & Vision */}
+      <MissionVision />
+
+      {/* Impact Stats */}
+      <Stats />
+
+      {/* Initiatives Carousel */}
+      <section className="py-5 bg-light">
         <div className="container">
-          <div className="section-header">
-            <h3 className="section-subtitle">Our Impactful Initiatives</h3>
-            <h2 className="section-title">Support Our Causes</h2>
-          </div>
+          <h2 className="text-center mb-5">Our initiatives</h2>
           <Initiatives />
         </div>
       </section>
 
-      {/* Impact Stats Section */}
-      <section className="section impact-section">
+      <ImpactStories />
+
+      {/* Testimonials */}
+      <Testimonials />
+      {/* Partner Logos */}
+      <PartnerLogos />
+      {/* Volunteer CTA */}
+      <VolunteerCTA />
+
+      {/* Photo Gallery */}
+      <section className="py-5">
         <div className="container">
-          <div className="section-header">
-            <h3 className="section-subtitle">Our Achievements</h3>
-            <h2 className="section-title">Making a Difference</h2>
-          </div>
-          <Funds />
+          <h2 className="text-center mb-5">Our Work in Action</h2>
+          <Gallery />
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <h3 className="section-subtitle">What People Say</h3>
-            <h2 className="section-title">Stories of Impact</h2>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
-                <div className="testimonial-content">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="testimonial-img"
-                  />
-                  <blockquote className="testimonial-text">"{testimonial.text}"</blockquote>
-                  <h4 className="testimonial-author">{testimonial.name}</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call-to-Action Section */}
-      <section className="section cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Be the Change Today</h2>
-            <p className="cta-text">
-              Your donation, big or small, can change lives. Support Nile
-              NGO's mission to uplift communities.
-            </p>
-            <button
-              className="btn btn-donate"
-              onClick={() => navigate("/donate")}
-            >
-              Donate Now
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="section contact-section">
-        <div className="container">
-          <div className="section-header">
-            <h3 className="section-subtitle">Get In Touch</h3>
-            <h2 className="section-title">Contact Us</h2>
-          </div>
-          <div className="contact-info">
-            <div className="contact-item">
-              <i className="fas fa-map-marker-alt contact-icon"></i>
-              <p>Harar, Ethiopia</p>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-phone contact-icon"></i>
-              <p>+251984600700</p>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-envelope contact-icon"></i>
-              <p>info@majmuaa.com</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Newsletter Signup */}
+      <Newsletter />
 
       <Footer />
       <BackToTop />
-    </div>
+    </>
   );
 }

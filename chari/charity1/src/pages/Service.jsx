@@ -190,7 +190,7 @@ export default function Service() {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <h4>Our Services</h4>
+              <h2>Our Services</h2>
               <p className="mx-auto">
                 Empowering communities through comprehensive welfare, health, education, and financial support programs.
               </p>

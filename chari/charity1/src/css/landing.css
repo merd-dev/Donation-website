@@ -86,6 +86,17 @@ h4 {
   justify-content: space-between;
   max-width: 250px;
   margin-top: 20px;
+  
+}
+.btn-success{
+  color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #0056b3;
+  border-color: #004085;
 }
 
 /* Right section styles */

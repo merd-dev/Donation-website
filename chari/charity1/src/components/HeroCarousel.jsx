@@ -1,34 +1,29 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
-import "./Hero";
-// import educationImg from "../src/assets/education.jpg";
-// import waterImg from "../src/assets/water.jpg";
-// import schoolImg from "../src/assets/school.jpg";
+import educationImg from "../assets/education.jpg";
+import waterImg from "../assets/water.jpg";
+import schoolImg from "../assets/school.jpg";
+import "../css/Hero.css";
 
 export default function HeroCarousel() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Using reliable image sources with fallbacks
   const carouselItems = [
     {
-      image: "../src/assets/education.jpg", // Local image path
-      fallbackImage: "https://example.com/education-fallback.jpg",
+      image: educationImg,
       title: "Education for Every Child",
       subtitle: "Sponsor a child's education today",
       cta: "Learn More",
       youtubeLink: "https://www.youtube.com/watch?v=HPCW_CSKy3o",
     },
     {
-      image: "../src/assets/water.jpg",
-
+      image: waterImg,
       title: "Clean Water Initiative",
       subtitle: "Bringing safe drinking water to communities",
       cta: "Support Now",
     },
     {
-      image: "../src/assets/school.jpg",
-      fallbackImage:
-        "https://images.pexels.com/photos/5726709/pexels-photo-5726709.jpeg",
+      image: schoolImg,
       title: "Medical Camps",
       subtitle: "Providing healthcare to remote villages",
       cta: "Donate Medical Supplies",
@@ -44,25 +39,20 @@ export default function HeroCarousel() {
   };
 
   return (
-    <>
+    <div className="hero-carousel-container">
       <Carousel fade controls={false} indicators={true} interval={5000}>
         {carouselItems.map((item, index) => (
           <Carousel.Item key={index}>
-            <div className="hero-slide-container">
-              {/* Image with fallback handling */}
+            <div className="hero-slide">
               <img
                 className="hero-image"
                 src={item.image}
                 alt={item.title}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = item.fallbackImage;
-                }}
               />
-              <div className="carousel-caption">
+              <div className="hero-content">
                 <h1>{item.title}</h1>
                 <p>{item.subtitle}</p>
-                <div className="cta-buttons">
+                <div className="hero-buttons">
                   {item.youtubeLink ? (
                     <button
                       className="btn btn-primary"
@@ -82,26 +72,28 @@ export default function HeroCarousel() {
       </Carousel>
 
       {selectedVideo && (
-        <div className="video-modal-overlay">
+        <div className="video-modal">
           <div className="video-modal-content">
             <button
-              className="close-button"
+              className="video-close-btn"
               onClick={() => setSelectedVideo(null)}
             >
               ×
             </button>
-            <div className="video-container">
+            <div className="video-wrapper">
               <iframe
                 src={`https://www.youtube.com/embed/${getYouTubeId(
                   selectedVideo
                 )}?autoplay=1`}
                 title="YouTube video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

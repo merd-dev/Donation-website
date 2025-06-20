@@ -4,7 +4,7 @@
 .page-header {
     position: relative;
     margin-bottom: 0;
-    padding: 340px 0 90px 0;
+    padding: 250px 0 90px 0;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(../assets/page-header.jpg);
     background-attachment: fixed;

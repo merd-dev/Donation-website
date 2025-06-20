@@ -4,11 +4,11 @@
   color: #333;
 }
 
-.page-header {
+/* .page-header {
   padding: 60px 0;
   background-color: #f8f9fa;
   text-align: center;
-}
+} */
 
 .page-title {
   font-size: 2.5rem;
@@ -17,12 +17,12 @@
   margin-bottom: 15px;
 }
 
-.page-header p {
+/* .page-header p {
   font-size: 1.2rem;
   color: #555;
   max-width: 700px;
   margin: 0 auto;
-}
+} */
 
 .services-section {
   padding: 60px 0;
@@ -120,7 +120,7 @@
 
 .cta-section {
   padding: 60px 0;
-  background-color: #28a745;
+  background-color: rgb(44, 62, 80);
   color: #fff;
   text-align: center;
 }
@@ -141,7 +141,7 @@
   padding: 12px 30px;
   font-size: 1.1rem;
   background-color: #fff;
-  color: #28a745;
+  color: #212529;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -149,7 +149,9 @@
 }
 
 .donate-btn:hover {
-  background-color: #f8f9fa;
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
 }
 
 @media (max-width: 768px) {

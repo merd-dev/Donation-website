@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Service from "./pages/Service";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
+import News from "./pages/News";
 // import SignUp from "./pages/SignUp";
 // import Admin from "./pages/Admin";
 
@@ -15,7 +16,8 @@ export default function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/service" element={<Service />} />
 
-       <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/news" element={<News />} />
         <Route exact path="/donate" element={<Donate />} />
       </Routes>
     </BrowserRouter>
